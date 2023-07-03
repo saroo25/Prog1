@@ -41,7 +41,7 @@ typedef struct nodo{
     struct nodo* prev;
 }Nodo;
 
-void insert(Nodo **head, Data dati){
+void insertRecord(Nodo **head, Data dati){
     Nodo *new_nodo=malloc(sizeof(Nodo));
     new_nodo->d=dati;
     Nodo *iter=(*head);
@@ -73,11 +73,54 @@ void insert(Nodo **head, Data dati){
 
 }
 
+Nodo **buildList(Inputs I){
+    FILE *f=fopen(I.filename,"r");
+    if(!f){
+        fprintf(stderr,"Impossibile aprire il file\n");
+        exit(1);
+    }
+    Nodo **head=malloc(sizeof(Nodo *));
+    (*head)=NULL;
 
+    while(1){
+        Data d;
+        fscanf(f,"%f\n",&d.V);
+        fscanf(f,"%s\n",d.P);
+        
+        
+        if(feof(f)) break;
+        insertRecord(head,d);
+    }
+    return head;
+}
+
+void printList(Nodo **head){
+    Nodo *iter=(*head);
+    while(iter!=NULL){
+        printf("%f %s\n",iter->d.V,iter->d.P);
+        iter=iter->next;
+    }
+
+}
+
+void elab(Nodo **head,Inputs I){
+    float f=I.F;
+    int i=0;
+    Nodo *iter=(*head);
+    while(iter!=NULL){
+        if(iter->d.V>=f){
+            i++;
+        }
+        iter=iter->next;
+    }
+    printf("Numero di elementi con V>=F %d\n",i);
+}
 
 int main(int argc, char *argv[]){
     Inputs I=readInput(argc,argv);
     printf("%s %f\n",I.filename,I.F);
-
+    Nodo **head=buildList(I);
+    printList(head);
+    elab(head,I);
 
 }
