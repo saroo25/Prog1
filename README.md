@@ -1,6 +1,6 @@
 <h2 align="center"> Tutorato di Programmazione 1 - Università degli Studi di Catania </h2>
 
-Benvenuto nella repo del tutorato di Programmazione 1 dell'Università degli Studi di Catania.
+Benvenuti nella repo del tutorato di Programmazione 1 dell'Università degli Studi di Catania.
 Il corso sarà di supporto a tutti coloro che vogliono migliorare la loro abilità di programmare in C (si spera).
 
 ---
@@ -47,7 +47,7 @@ Per maggiori dettagli sulle date e gli orari delle lezioni, vi invito a consulta
 Documetazione C:
 
 - [DevDocs](https://devdocs.io/c/)
-
+- [How to intstall WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 ---
 
 <h2 align="center">Progetti disponibili</h2> <p align="center">Di seguito è riportato un elenco dei progetti disponibili nella repository:</p> <div align="left"> <ul> <li> <details> <summary><strong>Lez 1: </strong> </summary> <p>Esame_02-02-2023.</p> </details> </li> <li> <details> <summary><strong>Lez 2:</strong> </summary> <p>Esame_04-04-2023.</p> </details> </li> <li> <details> <summary><strong>Lez 3:</strong> </summary> <p>Esame_23-02-2023.</p> </details> </li> <li> <details> <summary><strong>Lez 4:</strong> </summary> <p>Esame_27-06-2023(Furnari).</p> </details> </li> <li> <details> <summary><strong>Lez 5:</strong> </summary> <p>Esame_27-06-2023(Messina).</p>  <p>Varianti con Pila e Coda.</p></details> </li> <li> <details> <summary><strong>Lez 6:</strong> </summary> <p>Simulazione d'esame</p> </details> </li> </ul> </div>
