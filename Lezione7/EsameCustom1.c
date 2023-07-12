@@ -165,6 +165,23 @@ void saveList(Nodo **head, char* filename){
     
 }
 
+Nodo** concatenaListe( Nodo **LAE, Nodo **LFN, Nodo **LMZ){
+    Nodo** head= LAE;
+    if(*LAE && *LFN && *LMZ){
+        
+        Nodo * iter=*LAE;
+        while(iter->next!=NULL){
+           iter=iter->next;
+        }
+        iter->next=*LFN;
+        while(iter->next!=NULL){
+           iter=iter->next;
+        }
+        iter->next=*LMZ;
+    }
+    return head;
+}
+
 
 int main(int argc, char *argv[]){
 
@@ -175,7 +192,7 @@ int main(int argc, char *argv[]){
     Inputs in= decodeParameters(argc,argv);
     //printf("%s \n",in.filename);
     Nodo **L=readInputs(in);
-    printLista(L);
+    //printLista(L);
     Nodo **LAE=malloc(sizeof(Nodo*));
     Nodo **LFN=malloc(sizeof(Nodo*));
     Nodo **LMZ=malloc(sizeof(Nodo*));
@@ -185,12 +202,14 @@ int main(int argc, char *argv[]){
    
     listTrimmer(L,LAE,LFN,LMZ);
     printf("LAE:\n");
-    printLista(LAE);
+    //printLista(LAE);
     printf("LFN:\n");
-    printLista(LFN);
+    //printLista(LFN);
     printf("LMZ:\n");
-    printLista(LMZ);
+    //printLista(LMZ);
     saveList(LAE,"AE.txt");
     saveList(LFN,"FN.txt");
     saveList(LMZ,"MZ.txt");
+    L=concatenaListe(LAE,LFN,LMZ);
+    printLista(L);
 }
