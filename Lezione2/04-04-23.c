@@ -39,6 +39,7 @@ double ** readFile(Inputs in){
     for(int i=0;i<in.n;i++){
         for(int j=0;j<in.m;j++){
             fscanf(f,"%lf,",&M[i][j]);
+            
         }
     }
     
